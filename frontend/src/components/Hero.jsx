@@ -14,14 +14,14 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="top" className="max-w-6xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32">
-      <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+    <section id="top" className="max-w-6xl mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16">
+      <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
         <div className="order-2 md:order-1">
-          <span className="inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase text-[var(--color-accent)] bg-[var(--color-accent-soft)] border border-[var(--color-accent)]/30 rounded-full px-3 py-1 mb-6">
+          <span className="inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase text-[var(--color-accent)] bg-[var(--color-accent-soft)] border border-[var(--color-accent)]/30 rounded-full px-3 py-1 mb-4">
             Available for new opportunities
           </span>
 
-          <h1 className="font-[var(--font-display)] font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mb-4">
+          <h1 className="font-[var(--font-display)] font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mb-3">
             I'm a
             <br />
             <span className="text-[var(--color-accent)] inline-block min-h-[1.1em]">
@@ -29,11 +29,11 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-[var(--color-text-muted)] text-base sm:text-lg max-w-xl mb-8">
+          <p className="text-[var(--color-text-muted)] text-base sm:text-lg max-w-xl mb-6">
             {site.tagline}
           </p>
 
-          <div className="flex flex-wrap items-center gap-3 mb-6">
+          <div className="flex flex-wrap items-center gap-3 mb-5">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] text-white font-medium px-5 py-3 hover:bg-[var(--color-accent-hover)] active:scale-95 transition-all"
@@ -77,8 +77,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="order-1 md:order-2 flex flex-col items-center md:items-end gap-6">
-          <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <div className="order-1 md:order-2 flex flex-col items-center md:items-end gap-4">
+          <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)]">
             <img
               src={site.photoUrl}
               alt={site.photoAlt}
@@ -124,9 +124,13 @@ function TerminalCard() {
         <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
         <span className="ml-2 text-gray-500 text-xs">data-pipeline-monitor --verbose</span>
       </div>
-      <div className="p-4 space-y-1.5 min-h-[110px] text-gray-300">
-        {lines.slice(0, visibleCount).map((line, i) => (
-          <div key={i} className="whitespace-pre-wrap leading-relaxed">
+      <div className="p-4 space-y-1.5 text-gray-300">
+        {lines.map((line, i) => (
+          <div
+            key={i}
+            className="whitespace-pre-wrap leading-relaxed transition-opacity duration-300"
+            style={{ opacity: i < visibleCount ? 1 : 0 }}
+          >
             <span className="text-gray-600">[{line.time}]</span>{" "}
             <span className={levelColor[line.level] || "text-gray-400"}>{line.level}</span>{" "}
             {line.text}
