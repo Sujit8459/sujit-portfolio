@@ -34,7 +34,7 @@ export const projects = [
     publication: {
       title: "SmartConnect – A Web-Based Chat Application with Filter-Based Matching and AI Enhancements",
       venue: "ICRACE 2026",
-      url: "/certificates/smartconnect-icrace-2026.pdf",
+      url: "/papers/smartconnect-icrace-2026-paper.pdf",
     },
   },
   {

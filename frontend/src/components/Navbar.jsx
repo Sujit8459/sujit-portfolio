@@ -64,12 +64,6 @@ export default function Navbar({ theme, toggleTheme }) {
           >
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
           </button>
-          <a
-            href={`mailto:${site.email}`}
-            className="hidden sm:inline-flex items-center rounded-lg bg-[var(--color-accent)] text-white text-sm font-medium px-4 py-2 hover:bg-[var(--color-accent-hover)] active:scale-95 transition-all"
-          >
-            Hire Me
-          </a>
           <button
             className="md:hidden w-9 h-9 grid place-items-center rounded-lg border border-[var(--color-border)]"
             onClick={() => setMobileOpen((v) => !v)}

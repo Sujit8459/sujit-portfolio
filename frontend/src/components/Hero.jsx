@@ -35,7 +35,7 @@ export default function Hero() {
 
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <a
-              href={`mailto:${site.email}`}
+              href="#contact"
               className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] text-white font-medium px-5 py-3 hover:bg-[var(--color-accent-hover)] active:scale-95 transition-all"
             >
               Get in Touch
